@@ -25,7 +25,7 @@ const UserForm = () => {
 
   const handleSubmit = async (values, { setSubmitting }) => {
     try {
-      await axios.post('http://localhost:8080/api/users/register', values);
+      await axios.post('https://rentify-backend-1n56.onrender.com/api/users/register', values);
       alert('User created successfully!');
     } catch (error) {
       alert('User creation failed!');

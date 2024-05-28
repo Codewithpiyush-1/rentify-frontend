@@ -12,7 +12,7 @@ const HomePage = () => {
   useEffect(() => {
     const fetchProperties = async () => {
       try {
-        const response = await axios.get(`/api/properties?page=${currentPage}&size=${propertiesPerPage}`);
+        const response = await axios.get(`https://rentify-backend-1n56.onrender.com/api/properties?page=${currentPage}&size=${propertiesPerPage}`);
         setProperties(response.data.properties);
         setTotalProperties(response.data.total);
       } catch (error) {

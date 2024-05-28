@@ -10,7 +10,7 @@ const PropertyList = () => {
   useEffect(() => {
     const fetchProperties = async () => {
       try {
-        const response = await axios.get('http://localhost:8080/api/properties');
+        const response = await axios.get('https://rentify-backend-1n56.onrender.com/api/properties');
         setProperties(response.data);
       } catch (error) {
         setError(error.message);

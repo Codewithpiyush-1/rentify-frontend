@@ -19,7 +19,7 @@ const LoginPage = () => {
 
   const handleSubmit = async (values, { setSubmitting }) => {
     try {
-      const response = await axios.post('http://localhost:8080/api/users/login', values);
+      const response = await axios.post('https://rentify-backend-1n56.onrender.com/api/users/login', values);
       if (response.status === 200) {
         alert('Login successful!');
         history('/'); // Redirect to home page

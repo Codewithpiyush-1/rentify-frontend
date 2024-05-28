@@ -13,7 +13,7 @@ const PropertyPage = () => {
     const fetchProperties = async () => {
       try {
         const token = localStorage.getItem('token');
-        const response = await axios.get(`/api/properties/user?page=${currentPage}&size=${propertiesPerPage}`, {
+        const response = await axios.get(`https://rentify-backend-1n56.onrender.com/api/properties/user?page=${currentPage}&size=${propertiesPerPage}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         setProperties(response.data.properties);
@@ -29,11 +29,11 @@ const PropertyPage = () => {
   const handleDelete = async (propertyId) => {
     try {
       const token = localStorage.getItem('token');
-      await axios.delete(`/api/properties/${propertyId}`, {
+      await axios.delete(`https://rentify-backend-1n56.onrender.com/api/properties/${propertyId}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       // Re-fetch properties to update the list
-      const response = await axios.get(`/api/properties/user?page=${currentPage}&size=${propertiesPerPage}`, {
+      const response = await axios.get(`https://rentify-backend-1n56.onrender.com/api/properties/user?page=${currentPage}&size=${propertiesPerPage}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setProperties(response.data.properties);

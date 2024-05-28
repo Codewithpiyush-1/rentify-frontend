@@ -14,7 +14,7 @@ const LoginForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:8080/api/users/login", formData);
+      const response = await axios.post("https://rentify-backend-1n56.onrender.com/api/users/login", formData);
       localStorage.setItem("token", response.data.token);
       alert("Login successful!");
       history("/");

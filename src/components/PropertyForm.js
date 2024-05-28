@@ -25,7 +25,7 @@ const PropertyForm = () => {
     e.preventDefault();
     try {
       const token = localStorage.getItem("token");
-      await axios.post("http://localhost:8080/api/properties/add", property, {
+      await axios.post("https://rentify-backend-1n56.onrender.com/api/properties/add", property, {
         headers: { Authorization: `Bearer ${token}` },
       });
       alert("Property posted successfully!");
